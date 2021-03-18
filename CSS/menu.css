@@ -1,0 +1,47 @@
+.menu-header {
+    width: 100vw;
+    padding: 2.5rem 8.5rem;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    align-items: center;
+}
+.menu-list {
+    display: flex;
+    list-style-type: none;
+}
+.menu-list .menu-link {
+    text-decoration: none;
+    padding: 1rem 1.5rem;
+    margin-right: 3.5rem;
+    color: #333;
+    position: relative;
+}
+.menu-list .menu-link::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 0%;
+    height: 0.2rem;
+    border-radius: 1rem;
+    background: linear-gradient(to right, #c800d2, #00c8ff);
+    left: 0;
+    opacity: 0;
+    transition: 0.5s;
+}
+.menu-list .menu-link:hover:after {
+    opacity: 1;
+    width: 100%;
+}
+.menu-list .menu-link[href="#"]::after {
+    opacity: 1;
+    width: 100%;
+}
+.menu-link .menu-item {
+    font-size: 1.4rem;
+    text-align: center;
+}
+.menu-list .menu-link:last-child {
+    margin-right: 0;
+}

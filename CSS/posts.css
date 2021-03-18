@@ -1,0 +1,94 @@
+.tag-tool-container {
+    width: 88%;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    margin: 5rem 0;
+}
+.tag-list {
+    display: flex;
+    position: relative;
+    margin: 1.5rem 0;
+    flex-wrap: wrap;
+    height: 5rem;
+    border-radius: 2.5rem;
+    background-color: #00000000;
+    list-style: none;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+.tag-list .tag {
+    padding: 1rem 1.5rem;
+    border-radius: 2rem;
+    border: 0.1rem solid #00000010;
+    background-color: #fff;
+    margin: 1rem 0.5rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.tag-list .tag:hover {
+    border: 0.1rem solid #00a2ff;
+    background-color:#00a2ff10;
+}
+.tag-selected {
+    border: 0.1rem solid #00a2ff !important;
+    background-color:#00a2ff10 !important;
+}
+.posts-container {
+    position: relative;
+    margin: 5rem 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 88%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.post-container {
+    position: relative;
+    width: 40%;
+    height: 25rem;
+    margin: 1rem 1.5rem;
+    border-radius: 1rem;
+    display: flex;
+    overflow: hidden;
+    background-color: #00a2ff;
+    border: 0.1rem solid #000000;
+    cursor: pointer;
+}
+.post-container:hover .post-description {
+    left: 40%;
+    width: 60%;
+}
+.post-img-container {
+    width: 50%;
+    position: relative;
+}
+.post-img-container::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #0000003f;
+}
+.post-img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    object-fit: cover;
+}
+.post-description {
+    width: 100%;
+    position: absolute;
+    box-sizing: border-box;
+    padding: 1rem;
+    left: 0;
+    top: 0;
+    background-color: #fff;
+    height: 100%;
+    transition: 0.5s;
+}
