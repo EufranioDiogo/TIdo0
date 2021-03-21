@@ -1,11 +1,12 @@
 .menu-header {
-    width: 100vw;
+    width: 100%;
     padding: 2.5rem 8.5rem;
     box-sizing: border-box;
     display: flex;
     justify-content: space-between;
     background-color: #fff;
     align-items: center;
+    position: relative;
 }
 .menu-list {
     display: flex;

@@ -1,0 +1,28 @@
+.main-container {
+    width: 65%;
+    position: relative;
+    margin: 10rem 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.post-title {
+    font-size: 5rem;
+    margin-bottom: 2rem;
+    font-weight: 400;
+}
+.post-text {
+    line-height: 1.5;
+    font-size: 1.2rem;
+    color: #000000a9;
+    margin-bottom: 5rem;
+}
+.post-author {
+    font-weight: 300;
+    color: #000000cb;
+    margin-bottom: 0.5rem;
+}
+.post-data {
+    font-weight: 300;
+    color: #000000a9;
+    margin-bottom: 1.5rem;
+}

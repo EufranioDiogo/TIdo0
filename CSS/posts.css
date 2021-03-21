@@ -22,7 +22,7 @@
 .tag-list .tag {
     padding: 1rem 1.5rem;
     border-radius: 2rem;
-    border: 0.1rem solid #00000010;
+    border: 0.1rem solid #0000001c;
     background-color: #fff;
     margin: 1rem 0.5rem;
     font-size: 1.2rem;
@@ -45,6 +45,7 @@
     width: 88%;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 .post-container {
     position: relative;
@@ -54,16 +55,18 @@
     border-radius: 1rem;
     display: flex;
     overflow: hidden;
-    background-color: #00a2ff;
-    border: 0.1rem solid #000000;
+    border: 0.1rem solid #0000005b;
     cursor: pointer;
 }
+.post-container:last-child {
+    justify-self: start;
+}
 .post-container:hover .post-description {
-    left: 40%;
-    width: 60%;
+    left: 100%;
+    width: 100%;
 }
 .post-img-container {
-    width: 50%;
+    width: 100%;
     position: relative;
 }
 .post-img-container::after {
@@ -91,4 +94,56 @@
     background-color: #fff;
     height: 100%;
     transition: 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.see-more-tags-button {
+    width: 15%;
+    padding: 0;
+    text-align: left;
+}
+.title-post {
+    font-size: 3rem;
+    text-align: center;
+    font-weight: 300;
+    color: #000000d6;
+}
+.post-controller-container {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin: 2.5rem 0;
+    align-items: center;
+    width: 100%;
+}
+.post-controller {
+    width: 25%;
+    display: flex;
+    justify-content: center;
+}
+.post-controller-button {
+    padding: 1rem 1.5rem;
+    background-color: #fff;
+    border-radius: 0.5rem;
+    border: 0.1rem solid #00000025;
+    color: #00000094;
+    cursor: pointer;
+}
+.post-controller-button:hover {
+    border: 0.1rem solid #00a2ff;
+    background-color:#00a2ff10;
+}
+.post-controller-forward {
+    border-radius: 0 0.5rem 0.5rem 0;
+    border-left: none;
+}
+.post-controller-backward {
+    border-radius: 0.5rem 0rem 0rem 0.5rem;
+}
+.not-allowed {
+    background-color: #00000025;
+}
+.not-allowed:hover {
+    background-color: #00000025;
 }

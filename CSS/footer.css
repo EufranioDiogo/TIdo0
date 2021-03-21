@@ -1,0 +1,31 @@
+.footer {
+    box-sizing: content-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    padding: 1rem 0;
+    margin-top: 10rem;
+}
+.footer::after {
+    content: "";
+    width: 50%;
+    height: 0.2rem;
+    border-radius: 1rem;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #2929292c;
+}
+.footer .menu-list {
+    margin: 1rem 0;
+}
+.social-media-menu {
+    display: flex;
+    list-style: none;
+    margin: 1rem 0;
+}
+.social-media-menu .social-media-item {
+    margin: 0 1rem;
+}
