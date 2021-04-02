@@ -4,7 +4,7 @@ let searchTags = [];
 const renderPosts = () => {
     let i = posts.actualIndex;
 
-    while(posts.actualIndex < posts.stepSize) {
+    while (posts.actualIndex < posts.stepSize) {
         let postContainer = document.createElement('div');
         postContainer.classList.add('post-container');
 
@@ -34,7 +34,7 @@ const renderPosts = () => {
             postContainer.addEventListener('click', (e) => {
                 const element = e.target.parentElement;
 
-                window.location.href = 'http://'+ window.location.host + '/HTML/seeSpecificPost.html?id=' + element.getAttribute('id');
+                window.location.href = 'http://' + window.location.host + '/HTML/seeSpecificPost.html?id=' + element.getAttribute('id');
             })
             i++;
         }
@@ -75,8 +75,8 @@ const renderPost = (index) => {
 const removeTagsSelected = () => {
     const tags = document.querySelectorAll('.tag');
 
-    for(let i = 0; i < tags.length; i++) {
-        if(tags[i].classList.contains('tag-selected')) {
+    for (let i = 0; i < tags.length; i++) {
+        if (tags[i].classList.contains('tag-selected')) {
             tags[i].classList.remove('tag-selected');
         }
     }
@@ -85,75 +85,76 @@ const removeTagsSelected = () => {
 const showPosts = () => {
     const postContainer = document.querySelector('.posts-container');
 
-    while(postContainer.childNodes.length > 0) {
+    while (postContainer.childNodes.length > 0) {
         postContainer.removeChild(postContainer.lastChild);
     }
 
     let i = 0;
     const results = []
 
-    if (searchTags[0] != 'Todos') {
-        for(; i < searchTags.length; i++) {
-            const category = searchTags[i];
+    for (; i < searchTags.length; i++) {
+        const category = searchTags[i];
 
-            for (let j = 0; j < posts.quantPosts; j++) {
-                if (posts.posts[j].tag.indexOf(category) != -1) {
-                    let flagResultAdded = false;
+        for (let j = 0; j < posts.quantPosts; j++) {
+            const tagsVector = posts.posts[j].tag.map(element => element.name)
 
-                    for (let k = 0; k < results.length; k++) {
-                        if (results[k].index == k) {
-                            flagResultAdded = true;
-                            break;
-                        }
+            if (tagsVector.indexOf(category) != -1) {
+                let flagResultAdded = false;
+
+                for (let k = 0; k < results.length; k++) {
+                    if (results[k].index == k) {
+                        flagResultAdded = true;
+                        break;
                     }
-                    if (flagResultAdded == false) {
-                        console.log(posts.posts[j]);
-                        results.push({index: j, post: posts.posts[j]});
-                    }
-                    continue;
                 }
+                if (flagResultAdded == false) {
+                    results.push({ index: j, post: posts.posts[j], tags: tagsVector });
+                }
+                continue;
             }
-        }
-
-        for(i = 0; i < results.length; i++) {
-            postContainer.appendChild(renderPost(results[i].index));
-        }
-    } else {
-        for(i = 0; i < posts.posts.length; i++) {
-            postContainer.appendChild(renderPost(i));
         }
     }
 
-    
+    for (i = 0; i < results.length; i++) {
+        postContainer.appendChild(renderPost(results[i].index));
+    }
+
+    if (searchTags.length == 0) {
+        const noTagSelected = document.createElement('h2');
+        noTagSelected.classList.add('no-tags-selected');
+        noTagSelected.innerText = 'Escolha as tags que pretende pesquisar';
+        postContainer.appendChild(noTagSelected);
+    }
+    else if (results.length == 0) {
+        const noResultInfo = document.createElement('h2');
+        noResultInfo.classList.add('no-results-found');
+        noResultInfo.innerText = 'Sem resultados encontrados';
+        postContainer.appendChild(noResultInfo);
+    }
 }
 
 const renderTags = () => {
     let i = 0;
     const tagList = document.querySelector('.tag-list');
 
-    while(i < posts.tags.length) {
+    while (i < posts.tags.length) {
         const newTag = document.createElement('li');
         newTag.textContent = posts.tags[i].name;
         newTag.classList.add('tag');
 
         newTag.addEventListener('click', (e) => {
-            const element = e.target; 
+            const element = e.target;
             const name = element.innerText;
 
-            if (name != 'Todos') {
-                document.querySelector('.tag').classList.remove('tag-selected');
-                if (element.classList.contains('tag-selected')) {
-                    element.classList.remove('tag-selected');
-                } else {
-                    element.classList.add('tag-selected');
-                    searchTags.push(name);
-                }
-                showPosts();
+
+            if (element.classList.contains('tag-selected')) {
+                element.classList.remove('tag-selected');
+                searchTags.splice(searchTags.indexOf(name), 1);
             } else {
-                removeTagsSelected();
-                searchTags = ['Todos']
                 element.classList.add('tag-selected');
+                searchTags.push(name);
             }
+            showPosts();
         })
         tagList.appendChild(newTag);
         i++;
@@ -176,7 +177,7 @@ function forwardPosts() {
             postContainer.addEventListener('click', (e) => {
                 const element = e.target.parentElement;
 
-                window.location.href = 'http://'+ window.location.host + '/HTML/seeSpecificPost.html?id=' + element.getAttribute('id');
+                window.location.href = 'http://' + window.location.host + '/HTML/seeSpecificPost.html?id=' + element.getAttribute('id');
             })
             i++;
         }
@@ -207,27 +208,27 @@ function backwardPosts() {
 
 const getPostsFromAPI = () => {
     fetch('http://127.0.0.1:3000/show-all-posts')
-    .then((res) => res.json())
-    .then((data) => {
-        posts.quantPosts = data.size;
-        posts.stepSize = posts.quantPosts > 4 ? 4 : posts.quantPosts;
-        posts.endIndex = posts.stepSize;
-        posts.posts = data.posts;
-
-        fetch('http://127.0.0.1:3000/select-all-tags')
         .then((res) => res.json())
         .then((data) => {
-            posts.tags = data.tag;
-            renderPosts();
-            renderTags();
+            posts.quantPosts = data.size;
+            posts.stepSize = posts.quantPosts > 4 ? 4 : posts.quantPosts;
+            posts.endIndex = posts.stepSize;
+            posts.posts = data.posts;
+
+            fetch('http://127.0.0.1:3000/select-all-tags')
+                .then((res) => res.json())
+                .then((data) => {
+                    posts.tags = data.tag;
+                    renderPosts();
+                    renderTags();
+                })
+                .catch((err) => {
+                    console.log(err);
+                });
         })
         .catch((err) => {
             console.log(err);
-        });
-    })
-    .catch((err) => {
-        console.log(err);
-    })
+        })
 }
 
 

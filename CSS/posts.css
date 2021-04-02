@@ -28,6 +28,7 @@
     font-size: 1.2rem;
     cursor: pointer;
     transition: 0.3s;
+    font-family: "OswaldL", Arial, Helvetica, sans-serif;
 }
 .tag-list .tag:hover {
     border: 0.1rem solid #00a2ff;
