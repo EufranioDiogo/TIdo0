@@ -66,6 +66,7 @@
     margin: 10rem auto;
     margin-bottom: 0;
 }
+
 .future-courses-container .courses-container {
     margin: 5rem 0;
     width: 100%;
@@ -73,6 +74,7 @@
     justify-content: space-between;
     position: relative;
 }
+
 .course-link {
     width: 30%;
     overflow: hidden;
@@ -80,6 +82,7 @@
     text-decoration: none;
     color: #000;
 }
+
 .course-container-item {
     display: flex;
     flex-direction: column;
@@ -97,6 +100,7 @@
     height: 100%;
     position: absolute;
 }
+
 .course-img {
     position: absolute;
     width: 100%;
@@ -105,6 +109,7 @@
     left: 0;
     object-fit: cover;
 }
+
 .date-of-launch {
     display: inline-block;
     position: absolute;
@@ -113,10 +118,10 @@
     background-color: white;
     padding: 1rem 2rem;
 }
+
 .date-field {
     display: inline-block;
 }
-
 
 .course-description {
     position: relative;
@@ -129,16 +134,20 @@
     transition: 0.5s;
     z-index: -1;
 }
+
 .course-container-item:hover {
     height: 32.5rem;
 }
+
 .course-container-item:hover .course-photo-img-container {
     height: 60%;
 }
+
 .course-container-item:hover .course-description {
     height: 30%;
     top: 60%;
 }
+
 .course-container-item:hover .see-more-about-course {
     top: 80%;
     opacity: 1;
@@ -174,6 +183,7 @@
     z-index: -1;
     position: absolute;
 }
+
 .course-container-item .see-more-about-course:hover {
     background-color: #000000;
 }
@@ -322,10 +332,10 @@
     border-right: none;
     padding: 10rem 0;
 }
+
 .new-courses .email-input {
     width: 50%;
 }
-
 
 .u-heading2 {
     font-size: 3.5rem;
@@ -348,6 +358,7 @@
     padding: 10rem 5rem;
     box-sizing: border-box;
 }
+
 .testimonials-container::before {
     content: "";
     position: absolute;
@@ -357,6 +368,7 @@
     top: 0;
     left: 0;
 }
+
 .control-button {
     border-radius: 50%;
     border: none;
@@ -367,6 +379,7 @@
     z-index: 1;
     font-family: "OswaldR", Arial, Helvetica, sans-serif;
 }
+
 .testimonials {
     width: 60%;
     padding: 2rem 2.5rem;
@@ -378,6 +391,7 @@
     z-index: 1;
     margin: 0 10rem;
 }
+
 .testimonials .person-testimonials-photo {
     width: 7.5rem;
     height: 7.5rem;
@@ -385,16 +399,19 @@
     margin-bottom: 0.5rem;
     object-fit: cover;
 }
+
 .person-testimonials-name {
     font-size: 1.6rem;
     margin-bottom: 1.5rem;
 }
+
 .testimonials-text {
     color: #000000ab;
     font-family: "OswaldR", Arial, Helvetica, sans-serif;
     text-align: justify;
     width: 90%;
 }
+
 .week-posts {
     text-align: center;
 }
@@ -475,4 +492,92 @@ div.new-tecnology-img-container:nth-child(2) .brief-description:nth-child(2) {
     font-size: 2.5rem;
     text-align: center;
     padding: 0 0.5rem;
+}
+
+@media screen and (max-width: 768px) {
+    .menu-header {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    .most-accessed-posts-container .posts-container {
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+    .post-container {
+        width: 45%;
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+    .most-accessed-posts-container .posts-container::before {
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    .assign-newsletter-form {
+        width: 70%;
+    }
+    .dark-section-of-page-img-container {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 1rem;
+    }
+    .dark-section-of-page-img-container .new-tecnology-img-container {
+        width: 70%;
+        margin: 2rem 0;
+    }
+    .future-courses-container .courses-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .course-link {
+        width: 65%;
+    }
+    .course-container-item {
+        height: 38.8rem;
+        margin: 2.5rem 0;
+    }
+    .course-photo-img-container {
+        height: 60%;
+        position: relative;
+    }
+    .course-description {
+        height: 30%;
+        top: 0;
+    }
+    .course-description .course-little-description {
+        white-space: normal;
+    }
+    .new-courses {
+        width: 100%;
+    }
+    .testimonials-container {
+        width: 95%;
+    }
+}
+
+@media screen and (max-width: 414px) {
+    .most-accessed-posts-container .posts-container {
+        justify-content: center;
+    }
+    .post-container {
+        width: 85%;
+    }
+    .assign-newsletter-form {
+        width: 100%;
+        border: none;
+    }
+    .assign-newsletter-container {
+        margin: 2.5rem 0;
+    }
+    .dark-section-of-page-img-container {
+        width: 100%;
+    }
+    .dark-section-of-page-img-container .new-tecnology-img-container {
+        width: 90%;
+    }
+    .course-link {
+        width: 95%;
+    }
+    .control-button {
+        display: none;
+    }
 }
