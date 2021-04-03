@@ -6,7 +6,7 @@ const getPost = () => {
     .then((data) => {
         post = data.posts[0];
         document.querySelector('.post-title').innerText = post.title;
-        document.querySelector('.post-text').innerText = post.text;
+        document.querySelector('.post-text-container').innerHTML = post.text;
         document.querySelector('.post-author').innerText = post.author;
         document.querySelector('.post-data').innerText = post.data == undefined ? new Date().getDate() : post.data;
     })
