@@ -148,3 +148,20 @@
 .not-allowed:hover {
     background-color: #00000025;
 }
+
+@media screen and (max-width: 414px) {
+    .tag-list {
+        height: auto;
+    }
+    .post-container {
+        width: 100%;
+    }
+    .post-description {
+        height: 25%;
+        top: auto;
+        bottom: 0;
+    }
+    .title-post {
+        font-size: 2rem;
+    }
+}

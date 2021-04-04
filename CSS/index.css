@@ -495,10 +495,7 @@ div.new-tecnology-img-container:nth-child(2) .brief-description:nth-child(2) {
 }
 
 @media screen and (max-width: 768px) {
-    .menu-header {
-        padding-left: 1rem;
-        padding-right: 1rem;
-    }
+    
     .most-accessed-posts-container .posts-container {
         justify-content: flex-start;
         flex-wrap: wrap;

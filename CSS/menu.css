@@ -46,3 +46,10 @@
 .menu-list .menu-link:last-child {
     margin-right: 0;
 }
+
+@media screen and (max-width: 414px) {
+    .menu-header {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
