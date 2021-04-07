@@ -77,7 +77,6 @@
 
 .course-link {
     width: 30%;
-    overflow: hidden;
     position: relative;
     text-decoration: none;
     color: #000;
@@ -89,7 +88,6 @@
     width: 100%;
     height: 20rem;
     border: 0.1rem solid #0000001c;
-    overflow: hidden;
     transition: 0.5s;
     position: relative;
     box-shadow: -0.5rem 0.5rem 1rem #0000001f;
@@ -117,6 +115,12 @@
     left: 1.5%;
     background-color: white;
     padding: 1rem 2rem;
+    color: #00bfff;
+    font-size: 1.6rem;
+    border-radius: 0.5rem;
+}
+.date-label {
+    color: #000;
 }
 
 .date-field {
@@ -126,26 +130,25 @@
 .course-description {
     position: relative;
     width: 100%;
-    height: 0%;
-    top: -25%;
+    top: 0%;
     box-sizing: border-box;
     padding: 1rem;
     background-color: #fff;
     transition: 0.5s;
     z-index: -1;
+    border: 0.1rem solid #0000002b;
 }
 
 .course-container-item:hover {
-    height: 32.5rem;
+    box-shadow: -0.5rem 0.5rem 1rem #00000000;
 }
 
 .course-container-item:hover .course-photo-img-container {
-    height: 60%;
+    height: 100%;
 }
 
 .course-container-item:hover .course-description {
-    height: 30%;
-    top: 60%;
+    top: 100%;
 }
 
 .course-container-item:hover .see-more-about-course {
@@ -258,10 +261,13 @@
     box-sizing: border-box;
     padding: 1rem;
     background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .post-description .post-title {
-    font-size: 1.4rem;
+    font-size: 2rem;
     font-family: "OswaldB";
 }
 
@@ -576,5 +582,8 @@ div.new-tecnology-img-container:nth-child(2) .brief-description:nth-child(2) {
     }
     .control-button {
         display: none;
+    }
+    .testimonials {
+        width: 90%;
     }
 }

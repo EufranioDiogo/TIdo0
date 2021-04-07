@@ -96,9 +96,9 @@ const showPosts = () => {
         const category = searchTags[i];
 
         for (let j = 0; j < posts.quantPosts; j++) {
-            const tagsVector = posts.posts[j].tag.map(element => element.name)
+            const tagsOfThePosts = posts.posts[j].tag.map(element => element.name);
 
-            if (tagsVector.indexOf(category) != -1) {
+            if (tagsOfThePosts.indexOf(category) != -1 || searchTags.indexOf('All') != -1/* - - */) {
                 let flagResultAdded = false;
 
                 for (let k = 0; k < results.length; k++) {
@@ -108,7 +108,7 @@ const showPosts = () => {
                     }
                 }
                 if (flagResultAdded == false) {
-                    results.push({ index: j, post: posts.posts[j], tags: tagsVector });
+                    results.push({ index: j, post: posts.posts[j], tags: tagsOfThePosts });
                 }
                 continue;
             }
@@ -218,7 +218,16 @@ const getPostsFromAPI = () => {
             fetch('http://127.0.0.1:3000/select-all-tags')
                 .then((res) => res.json())
                 .then((data) => {
-                    posts.tags = data.tag;
+                    posts.tags.push({
+                        _id: '000000000000000000000000',
+                        name: 'All',
+                        __v: 0
+                    });
+
+                    for (let i = 0; i < data.tag.length; i++) {
+                        posts.tags.push(data.tag[i]);
+                    }
+
                     renderPosts();
                     renderTags();
                 })

@@ -4,14 +4,17 @@ const getPost = () => {
     fetch('http://127.0.0.1:3000/show-post/' + postID)
     .then((res) => res.json())
     .then((data) => {
-        post = data.posts[0];
+        post = data.post;
         document.querySelector('.post-title').innerText = post.title;
         document.querySelector('.post-text-container').innerHTML = post.text;
         document.querySelector('.post-author').innerText = post.author;
         document.querySelector('.post-data').innerText = post.data == undefined ? new Date().getDate() : post.data;
+
+        document.querySelector('.loading').style.display = 'none';
     })
     .catch((err) => {
         console.log(err);
+        document.querySelector('.loading').style.display = 'none';
     })
 }
 

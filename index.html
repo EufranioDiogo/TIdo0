@@ -42,44 +42,16 @@
             <h1 class="u--heading1">Posts mais acessados</h1>
 
             <div class="posts-container">
-                <div class="post-container">
-                    <div class="post-photo-img-container">
-                        <img src="IMG/pexels-thisisengineering-3912981.jpg" alt="" class="post-img">
-                    </div>
-                    <div class="post-description">
-                        <h3 class="post-title">Post title</h3>
-                    </div>
-                </div>
-
-                <div class="post-container">
-                    <div class="post-photo-img-container">
-                        <img src="IMG/pexels-thisisengineering-3912981.jpg" alt="" class="post-img">
-                    </div>
-                    <div class="post-description">
-                        <h3 class="post-title">Post title</h3>
-                    </div>
-                </div>
-
-                <div class="post-container">
-                    <div class="post-photo-img-container">
-                        <img src="IMG/pexels-thisisengineering-3912981.jpg" alt="" class="post-img">
-                    </div>
-                    <div class="post-description">
-                        <h3 class="post-title">Post title</h3>
-                        <p class="post-little-description">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste nemo mollitia magnam,
-                            molestias ipsa quas eaque harum tenetur iure, voluptatem corporis quos hic fugit aliquam!
-                        </p>
-                    </div>
-                </div>
+                <!-- Aqui estarão os posts mais acessados inseridos apartir do js -->
             </div>
         </div>
 
         <div class="assign-newsletter-container">
-            <form action="/assign-news-letter" method="post" class="assign-newsletter-form">
+            <form action="http://127.0.0.1:3000/create-lead" method="POST" class="assign-newsletter-form">
                 <label for="email" class="assign-newsletter-label">Assine a Newsletter</label>
                 <input type="email" name="email" id="email1" class="email-input"
                     placeholder="email@gmail.com">
+                <input type="hidden" name="type" value="newsletter">
                 <input type="submit" value="Assinar" class="submit-button">
             </form>
         </div>
@@ -129,7 +101,7 @@
                             </div>
                         </div>
                         <div class="course-description">
-                            <h3 class="course-title">Post title</h3>
+                            <h3 class="course-title">Course Name</h3>
                             <p class="course-little-description">
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste nemo mollitia magnam,
                                 molestias ipsa quas eaque harum tenetur iure, voluptatem corporis quos hic fugit aliquam!
@@ -152,7 +124,7 @@
                             </div>
                         </div>
                         <div class="course-description">
-                            <h3 class="course-title">Post title</h3>
+                            <h3 class="course-title">Course Name</h3>
                             <p class="course-little-description">
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste nemo mollitia magnam,
                                 molestias ipsa quas eaque harum tenetur iure, voluptatem corporis quos hic fugit aliquam!
@@ -175,7 +147,7 @@
                             </div>
                         </div>
                         <div class="course-description">
-                            <h3 class="course-title">Post title</h3>
+                            <h3 class="course-title">Course Name</h3>
                             <p class="course-little-description">
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste nemo mollitia magnam,
                                 molestias ipsa quas eaque harum tenetur iure, voluptatem corporis quos hic fugit aliquam!
@@ -188,10 +160,11 @@
         </div>
 
         <div class="assign-newsletter-container">
-            <form action="/assign-alert-new-courses" method="post" class="assign-newsletter-form new-courses">
+            <form action="http://127.0.0.1:3000/create-lead" method="POST" class="assign-newsletter-form new-courses">
                 <label for="email" class="assign-newsletter-label">Não perca os lançamentos</label>
                 <input type="email" name="email" id="email1" class="email-input"
                     placeholder="email@gmail.com">
+                <input type="hidden" name="type" value="newscourses">
                 <input type="submit" value="Assinar" class="submit-button">
             </form>
         </div>
@@ -204,7 +177,7 @@
                 <div class="testimonials">
                     <img src="IMG/pexels-ali-pazani-2777898.jpg" alt="" class="person-testimonials-photo">
                     <h2 class="person-testimonials-name">
-                        Alen Marcs
+                        Usuário Final
                     </h2>
 
                     <p class="testimonials-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab amet vitae dolor quos, dolorem in, laudantium iusto assumenda laborum necessitatibus quibusdam ex possimus odio sapiente repellendus ratione placeat magni animi deserunt blanditiis omnis reiciendis qui, optio esse? Eos nulla nam ipsa. Quis libero a minus non quasi cum doloremque dignissimos.</p>
@@ -240,6 +213,8 @@
             </li>
         </ul>
     </footer>
+
+    <script src="JS/index.js"></script>
 </body>
 
 </html>
