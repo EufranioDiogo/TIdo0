@@ -207,7 +207,7 @@ function backwardPosts() {
 }
 
 const getPostsFromAPI = () => {
-    fetch('http://127.0.0.1:3000/show-all-posts')
+    fetch('https://rocky-inlet-66290.herokuapp.com/show-all-posts')
         .then((res) => res.json())
         .then((data) => {
             posts.quantPosts = data.size;
@@ -215,7 +215,7 @@ const getPostsFromAPI = () => {
             posts.endIndex = posts.stepSize;
             posts.posts = data.posts;
 
-            fetch('http://127.0.0.1:3000/select-all-tags')
+            fetch('https://rocky-inlet-66290.herokuapp.com/select-all-tags')
                 .then((res) => res.json())
                 .then((data) => {
                     posts.tags.push({

@@ -1,5 +1,5 @@
 function getTopPosts() {
-    fetch('http://127.0.0.1:3000/top-posts')
+    fetch('https://rocky-inlet-66290.herokuapp.com/top-posts')
         .then((res) => res.json())
         .then((data) => {
             const topPosts = data.posts;

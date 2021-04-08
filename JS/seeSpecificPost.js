@@ -1,7 +1,7 @@
 const postID = window.location.href.split('?')[1].split('=')[1]
 
 const getPost = () => {
-    fetch('http://127.0.0.1:3000/show-post/' + postID)
+    fetch('https://rocky-inlet-66290.herokuapp.com/show-post/' + postID)
     .then((res) => res.json())
     .then((data) => {
         post = data.post;
