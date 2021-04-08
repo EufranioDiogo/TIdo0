@@ -56,5 +56,4 @@ function getTopPosts() {
         })
 }
 
-
 getTopPosts();

@@ -6,6 +6,7 @@
     position: relative;
     padding: 1rem 0;
     margin-top: 10rem;
+    width: 100%;
 }
 .footer::after {
     content: "";
@@ -28,8 +29,31 @@
 }
 .social-media-menu .social-media-item {
     margin: 0 1rem;
+    display: inline-block;
+    overflow: hidden;
+    position: relative;
 }
+
 .social-media-icon {
-    font-size: 1.4rem;
+    font-size: 2.6rem;
     color: #292929;
+    transition: 0.5s;
+    cursor: pointer;
+}
+.facebook {
+    color: blue;
+}
+.instagram {
+    color: #f63051;
+}
+.social-media-icon-aux {
+    position: absolute;
+    left: 0;
+    transform: translateY(100%);
+}
+.social-media-item:hover .social-media-icon{
+    transform: rotate(360deg) scale(0);
+}
+.social-media-item:hover  .social-media-icon-aux {
+    transform: translateY(0) rotate(-360deg);
 }
