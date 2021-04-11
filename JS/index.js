@@ -44,7 +44,7 @@ function getTopPosts() {
                 postContainer.addEventListener('click', (event) => {
                     const id = post['_id'];
 
-                    window.location.href = 'http://' + window.location.host + '/HTML/seeSpecificPost.html?id=' + id;
+                    window.location.href = window.location.origin + '/' + window.location.pathname.split('/')[1] + '/HTML/seeSpecificPost.html?id=' + id;
                 })
 
                 document.querySelector('.posts-container').appendChild(postContainer)
