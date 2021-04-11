@@ -34,7 +34,7 @@ const renderPosts = () => {
             postContainer.addEventListener('click', (e) => {
                 const element = e.target.parentElement;
 
-                window.location.href = 'http://' + window.location.host + '/HTML/seeSpecificPost.html?id=' + element.getAttribute('id');
+                window.location.href = window.location.origin + '/' + window.location.pathname.split('/')[1] + '/HTML/seeSpecificPost.html?id=' + element.getAttribute('id');
             })
             i++;
         }
@@ -177,7 +177,7 @@ function forwardPosts() {
             postContainer.addEventListener('click', (e) => {
                 const element = e.target.parentElement;
 
-                window.location.href = 'http://' + window.location.host + '/HTML/seeSpecificPost.html?id=' + element.getAttribute('id');
+                window.location.href = window.location.origin + '/' + window.location.pathname.split('/')[1] + '/HTML/seeSpecificPost.html?id=' + element.getAttribute('id');
             })
             i++;
         }
